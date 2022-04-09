@@ -21,10 +21,13 @@ struct AccountManagement: View {
             
             // 로그아웃 클릭할 때 한번에 되는지 확인 필요
             Button(action : {
-                // kakao 로그아웃
-                kakaodel.kakaosignout()
-                // google 로그아웃
-                googledel.signOut()
+                if (LoginView.googleLogin == 1){
+                    // google 로그아웃
+                    googledel.signOut()
+                } else if (LoginView.kakaoLogin == 1){
+                    // kakao 로그아웃
+                    kakaodel.kakaosignout()
+                }
             }){
                 Text("로그아웃")
             }

@@ -79,11 +79,13 @@ class GoogleDelegate: ObservableObject {
                 self.firstLoggin()
             }
         )
+        print("Google Login success")
     }
     
     // 로그아웃
     func signOut(){
         GIDSignIn.sharedInstance.signOut()
         self.checkStatus()
+        print("Google Logout success")
     }
 }

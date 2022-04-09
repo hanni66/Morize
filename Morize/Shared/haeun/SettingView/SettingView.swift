@@ -11,17 +11,12 @@ import MessageUI
 
 struct SettingView: View {
     @Environment(\.presentationMode) var presentationmode
-    @State private var mailData = ComposeMailData(subject: "Morize 개발자에게",
-                                                  recipients: ["haeunkim0807@naver.com"],
-                                                  attachments: [AttachmentData(data: "Some text".data(using: .utf8)!,
-                                                  mimeType: "text/plain",
-                                                  fileName: "text.txt")])
-    @State private var showMailView = false
+    
     var body: some View {
         NavigationView{
             VStack(alignment: .leading) {
                 Button {
-                    print("asdf")
+                    print("뒤로가기 버튼")
                     self.presentationmode.wrappedValue.dismiss()
                 } label: {
                     Image(systemName: "arrow.backward")
@@ -94,12 +89,9 @@ struct SettingView: View {
                         .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
                     }
                     // Navigation으로 바꿀 방법 찾아보기
-                    NavigationLink(destination: SendEmail(maildata: $mailData) { result in
-                        print(result)
-                    }) {
-//                        showMailView = true
+                    NavigationLink(destination: DeveloperInfoView()) {
                         HStack {
-                            Text("개발자에게 메일 보내기")
+                            Text("개발자 정보")
                                 .font(.custom("NotoSansKR-Regular", size: 16))
                                 .foregroundColor(Color.init(hex: "666666"))
                             Spacer()
@@ -108,26 +100,6 @@ struct SettingView: View {
                         }
                         .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
                     }
-                    
-//                    Button(action: {
-//                        showMailView = true
-//                     }) {
-//                         HStack {
-//                             Text("개발자에게 메일 보내기")
-//                                 .font(.custom("NotoSansKR-Regular", size: 16))
-//                                 .foregroundColor(Color.init(hex: "666666"))
-//                             Spacer()
-//                             Image(systemName: "chevron.right")
-//                                 .foregroundColor(Color.init(hex: "666666"))
-//                         }
-//                         .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
-//                     }
-//                     .disabled(!SendEmail.canSendMail)
-//                     .sheet(isPresented: $showMailView) {
-//                         SendEmail(maildata: $mailData) { result in
-//                             print(result)
-//                         }
-//                     }
                 }
             }
             .navigationBarHidden(true)
