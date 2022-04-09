@@ -94,25 +94,40 @@ struct SettingView: View {
                         .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
                     }
                     // Navigation으로 바꿀 방법 찾아보기
-                    Button(action: {
-                        showMailView = true
-                     }) {
-                         HStack {
-                             Text("개발자에게 메일 보내기")
-                                 .font(.custom("NotoSansKR-Regular", size: 16))
-                                 .foregroundColor(Color.init(hex: "666666"))
-                             Spacer()
-                             Image(systemName: "chevron.right")
-                                 .foregroundColor(Color.init(hex: "666666"))
-                         }
-                         .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
-                     }
-                     .disabled(!SendEmail.canSendMail)
-                     .sheet(isPresented: $showMailView) {
-                         SendEmail(maildata: $mailData) { result in
-                             print(result)
-                         }
-                     }
+                    NavigationLink(destination: SendEmail(maildata: $mailData) { result in
+                        print(result)
+                    }) {
+//                        showMailView = true
+                        HStack {
+                            Text("개발자에게 메일 보내기")
+                                .font(.custom("NotoSansKR-Regular", size: 16))
+                                .foregroundColor(Color.init(hex: "666666"))
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(Color.init(hex: "666666"))
+                        }
+                        .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
+                    }
+                    
+//                    Button(action: {
+//                        showMailView = true
+//                     }) {
+//                         HStack {
+//                             Text("개발자에게 메일 보내기")
+//                                 .font(.custom("NotoSansKR-Regular", size: 16))
+//                                 .foregroundColor(Color.init(hex: "666666"))
+//                             Spacer()
+//                             Image(systemName: "chevron.right")
+//                                 .foregroundColor(Color.init(hex: "666666"))
+//                         }
+//                         .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
+//                     }
+//                     .disabled(!SendEmail.canSendMail)
+//                     .sheet(isPresented: $showMailView) {
+//                         SendEmail(maildata: $mailData) { result in
+//                             print(result)
+//                         }
+//                     }
                 }
             }
             .navigationBarHidden(true)
