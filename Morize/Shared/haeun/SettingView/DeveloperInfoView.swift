@@ -36,18 +36,12 @@ struct DeveloperInfoView: View {
                     .padding(EdgeInsets(top: 15, leading: 20, bottom: 15, trailing: 0))
                 
                 LabelledDivider(label: "계정", image: "person")
-                HStack{
-                    DeveloperBottom(ImageName: "person1", bottomName: "Haeun")
+                VStack{
+                    DeveloperBottom(ImageName: "haeun", bottomName: "Haeun", gitlink: "https://github.com/hanni66")
+                    DeveloperBottom(ImageName: "jinhee", bottomName: "Jinhee", gitlink: "https://github.com/parkjinhee53")
+                    DeveloperBottom(ImageName: "porfile", bottomName: "Dongsuk", gitlink: "https://github.com/MojitoBar")
                 }
-//                Text("김하은")
-                Link("김하은의 Git", destination: URL(string: "https://github.com/hanni66")!)
-                
-                Text("박진희")
-                Link("박진희의 Git", destination: URL(string: "https://github.com/parkjinhee53")!)
-                
-                Text("주동석")
-                Link("주동석의 Git", destination: URL(string: "https://github.com/MojitoBar")!)
-                
+
                 LabelledDivider(label: "지원", image: "megaphone")
                 
                 Button(action: {
@@ -57,10 +51,10 @@ struct DeveloperInfoView: View {
                     HStack {
                         Text("개발자에게 메일 보내기")
                             .font(.custom("NotoSansKR-Regular", size: 16))
-                            .foregroundColor(Color.init(hex: "666666"))
+                            .foregroundColor(.black)
                         Spacer()
                         Image(systemName: "chevron.right")
-                            .foregroundColor(Color.init(hex: "666666"))
+                            .foregroundColor(.black)
                     }
                     .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
                 }
@@ -79,11 +73,23 @@ struct DeveloperInfoView: View {
 struct DeveloperBottom : View {
     var ImageName : String
     var bottomName : String
+    var gitlink : String
     
     var body : some View {
         HStack{
             CircleImageBtn(image: Image(ImageName))
+            Spacer()
             Text(bottomName)
+            Spacer()
+            Link(destination: URL(string: gitlink)!){
+                Text("Git")
+                    .frame(width: 50, height: 30)
+                    .background(Color.init(hex: "008E00"))
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
+            }
+                
         }
     }
 }
@@ -97,8 +103,8 @@ struct CircleImageBtn : View {
             .resizable()
             .frame(width: imgHW, height: imgHW)
             .clipShape(Circle())
-            .overlay(Circle().stroke(Color.white, lineWidth: 3))
-            .shadow(radius: 5)
+            .overlay(Circle().stroke(Color.init(hex: "008E00"), lineWidth: 1))
+            .shadow(radius: 2)
     }
     
     

@@ -13,17 +13,43 @@ struct CSVDataView: View {
     @State private var document: TextFile = TextFile(message: "Hello, World!")
     @State private var isImporting: Bool = false
     @State private var isExporting: Bool = false
+    @Environment(\.presentationMode) var presentationmode
+    
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             //            GroupBox(label: Text("Message:")) {
             //                TextEditor(text: $document.message)
             //            }
-            Text("CSV 백업 및 복원")
-                .padding(10)
-            HStack {
-                Spacer()
+            
+            Button {
+                print("뒤로가기 버튼")
+                self.presentationmode.wrappedValue.dismiss()
+            } label: {
+                Image(systemName: "arrow.backward")
+            }
+            .foregroundColor(Color.init(hex: "008E00"))
+            .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 0))
+            
+            Spacer()
+            
+            ScrollView() {
+                
+                Text("CSV 백업 및 복원")
+                    .font(.custom("NotoSansKR-Bold", size: 25))
+                    .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                    .padding(EdgeInsets(top: 15, leading: 20, bottom: 15, trailing: 0))
+                
+                LabelledDivider(label: "CSV 파일 가져오기 / 내보내기", image: "megaphone")
+                
                 Button(action: { isImporting = true }, label: {
-                    Text("CSV 파일로\n 단어 가져오기")
+                    HStack{
+                        Text("CSV 파일로 단어 가져오기")
+                            .font(.custom("NotoSansKR-Regular", size: 16))
+                            .foregroundColor(Color.init(hex: "666666"))
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(Color.init(hex: "666666"))
+                    }.padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
                 }).fileImporter(
                     isPresented: $isImporting,
                     allowedContentTypes: [.plainText],
@@ -39,10 +65,15 @@ struct CSVDataView: View {
                     }
                 }
                 
-                Spacer()
-                
                 Button(action: { isExporting = true }, label: {
-                    Text("CSV파일로\n 단어 내보내기")
+                    HStack{
+                        Text("CSV파일로 단어 내보내기")
+                            .font(.custom("NotoSansKR-Regular", size: 16))
+                            .foregroundColor(Color.init(hex: "666666"))
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(Color.init(hex: "666666"))
+                    }.padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
                 }).fileExporter(
                     isPresented: $isExporting,
                     document: document,
@@ -55,28 +86,27 @@ struct CSVDataView: View {
                         // Handle failure.
                     }
                 }
-                
-                Spacer()
+                    
+//                    List{
+                    //                Text("도움말")
+                    //                Section(header: Text("가져오는 방법")){
+                    //                    Text("dddddd")
+                    //                }
+                    //                Section(header: Text("내보내는 방법")){
+                    //                    Text("dddddd")
+                    //                }
+                    //            }.listStyle(SidebarListStyle())
+                    //                List{
+                    //                    Text("도움말")
+                    //                    Section(header: Text("가져오는 방법")){
+                    //                        Text("dddddd")
+                    //                    }
+                    //                    Section(header: Text("내보내는 방법")){
+                    //                        Text("dddddd")
+                    //                    }
+                    //                }.listStyle(SidebarListStyle())
             }
-            
-//            List{
-//                Text("도움말")
-//                Section(header: Text("가져오는 방법")){
-//                    Text("dddddd")
-//                }
-//                Section(header: Text("내보내는 방법")){
-//                    Text("dddddd")
-//                }
-//            }.listStyle(SidebarListStyle())
-//                List{
-//                    Text("도움말")
-//                    Section(header: Text("가져오는 방법")){
-//                        Text("dddddd")
-//                    }
-//                    Section(header: Text("내보내는 방법")){
-//                        Text("dddddd")
-//                    }
-//                }.listStyle(SidebarListStyle())
+            .navigationBarHidden(true)
         }
     }
 }

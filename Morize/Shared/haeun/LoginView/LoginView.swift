@@ -45,7 +45,7 @@ struct LoginView: View {
                     Text("The one and only vocabulary With ")
                         .font(.custom("NotoSansKR-Bold", size: 18))
                         .foregroundColor(Color.init(hex: "777777")) +
-                    Text("Morise")
+                    Text("Morize")
                         .font(.custom("NotoSansKR-Bold", size: 18))
                         .foregroundColor(Color.init(hex: "008E00"))
                     }
