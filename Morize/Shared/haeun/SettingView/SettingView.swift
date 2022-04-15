@@ -54,17 +54,17 @@ struct SettingView: View {
                         }
                         .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
                     }
-                    NavigationLink(destination: iCloudDataView()) {
-                        HStack {
-                            Text("iCloud 동기화")
-                                .font(.custom("NotoSansKR-Regular", size: 16))
-                                .foregroundColor(Color.init(hex: "666666"))
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(Color.init(hex: "666666"))
-                        }
-                        .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
-                    }
+//                    NavigationLink(destination: iCloudDataView()) {
+//                        HStack {
+//                            Text("iCloud 동기화")
+//                                .font(.custom("NotoSansKR-Regular", size: 16))
+//                                .foregroundColor(Color.init(hex: "666666"))
+//                            Spacer()
+//                            Image(systemName: "chevron.right")
+//                                .foregroundColor(Color.init(hex: "666666"))
+//                        }
+//                        .padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20))
+//                    }
                     NavigationLink(destination: CSVDataView()) {
                         HStack {
                             Text("CSV 파일 가져오기 / 내보내기")
