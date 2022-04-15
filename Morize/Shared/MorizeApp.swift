@@ -50,8 +50,6 @@ struct MorizeApp: App {
             LoginView()
                 .environmentObject(self.userAuth)
                 .environmentObject(self.kakaoAuth)
-//            MiniGame2B(currentPage: .constant(Pages.GamePage))
-//            MiniGame2B()
         }
     }
 }

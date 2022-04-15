@@ -22,8 +22,9 @@ class GameViewModel: ObservableObject {
         game.currentQuestion.correctAnswerIndex
     }
     
+    // 문제 개수 표시 
     var progressText: String {
-        "Question \(game.currentQuestionIndex + 1) / \(game.questionCount)"
+        "\(game.currentQuestionIndex + 1) / \(game.questionCount)"
     }
     
     var selectionWasMade: Bool {
@@ -54,12 +55,13 @@ class GameViewModel: ObservableObject {
         game.makeSelection(at: index)
     }
     
+    // 정답여부
     func colorForButton(at buttonIndex: Int) -> Color {
         guard let selectedIndex = game.selections[game.currentQuestion], selectedIndex == buttonIndex else { return .clear }
         if selectedIndex == correctAnswerIndex {
-            return .green
+            return Color.init(hex: "008E00").opacity(0.2)
         } else {
-            return .red
+            return Color.init(hex: "D23E2C")
         }
     }
 }
