@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct ResultsView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let viewModel: ResultsViewModel
-    
     @State var start = false
     @State var end = false
+    
+    @ObservedObject var gameViewModel: GameViewModel
+    @Binding var counter: Int
+    @Binding var countTo: Int
+    @Binding var gameover: Bool
+    @Binding var isTimer: Bool
     
     var body: some View {
         ZStack {
@@ -38,10 +44,9 @@ struct ResultsView: View {
                 
                 HStack {
                     Button("뒤로가기") {
-                        print("asdf")
                         end = true
+                        self.presentationMode.wrappedValue.dismiss()
                     }
-                    .fullScreenCover(isPresented: $end, content: MiniGameView.init)
                     .font(.custom("NotoSansKR-Bold", size: 20))
                     .padding()
                     .frame(width: UIScreen.main.bounds.width / 2 - 32, height: 50)
@@ -55,8 +60,13 @@ struct ResultsView: View {
                     Button("다시하기") {
                         print("asdf")
                         start = true
+                        gameViewModel.reset()
+                        print("log: \(gameViewModel.gameIsOver)")
+                        counter = 0
+                        countTo = 5
+                        gameover = false
+                        isTimer = true
                     }
-                    .fullScreenCover(isPresented: $start, content: TimerGame.init)
                     .font(.custom("NotoSansKR-Bold", size: 20))
                     .padding()
                     .frame(width: UIScreen.main.bounds.width / 2 - 32, height: 50)
@@ -68,15 +78,7 @@ struct ResultsView: View {
                 }
             }
         }
+        .background(.white)
         .navigationBarHidden(true)
-    }
-}
-
-
-struct ResultsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ResultsView(viewModel: ResultsViewModel(selectionCount: (3,1), gameStartTime: Date(), gameEndTime: Date()))
-        }
     }
 }

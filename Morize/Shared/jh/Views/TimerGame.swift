@@ -105,24 +105,22 @@ struct TimerGame: View {
                         counter = 0
                         countTo = 5
                         isTimer = true
+                        if viewModel.gameIsOver {
+                            isTimer = false
+                        }
                     },
                        label: {
                         BottomText(str: "Next")
                     })
                 }
             }.padding(.bottom)
+            if viewModel.gameIsOver {
+                ResultsView(viewModel: ResultsViewModel(selectionCount: viewModel.selectionCount, gameStartTime: viewModel.gameStartTime, gameEndTime: Date()), gameViewModel: viewModel, counter: $counter, countTo: $countTo, gameover: $gameover, isTimer: $isTimer)
+            }
         }
         .foregroundColor(.black)
         .navigationBarHidden(true)
-        .background(resultsNavigationLink)
     }
-    private var resultsNavigationLink: some View {
-        NavigationLink(
-            destination: ResultsView(viewModel: ResultsViewModel(selectionCount: viewModel.selectionCount, gameStartTime: viewModel.gameStartTime, gameEndTime: Date())),
-            isActive: .constant(viewModel.gameIsOver),
-            label: { EmptyView() })
-    }
-    
     func completed() -> Bool {
         return progress() == 1
     }
