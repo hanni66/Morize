@@ -100,6 +100,7 @@
 		B74EEF6E280478B40087DCB9 /* TimerGameIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EEF6D280478B40087DCB9 /* TimerGameIntro.swift */; };
 		B74EEF6F280478B40087DCB9 /* TimerGameIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EEF6D280478B40087DCB9 /* TimerGameIntro.swift */; };
 		B765AAB727BD4176000F249C /* WordStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765AAB627BD4176000F249C /* WordStorage.swift */; };
+		B76C07DF28095FCA003866DF /* Minigame2Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76C07DE28095FCA003866DF /* Minigame2Intro.swift */; };
 		B774CEFC277BECC900A9B368 /* MiniGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774CEFB277BECC900A9B368 /* MiniGame.swift */; };
 		B774CF01277BEDD500A9B368 /* MiniGameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774CF00277BEDD500A9B368 /* MiniGameVM.swift */; };
 		B777307A27851BA000123DAD /* CardFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B777307927851BA000123DAD /* CardFlip.swift */; };
@@ -250,6 +251,7 @@
 		B74B45BD278D96E2001140D9 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		B74EEF6D280478B40087DCB9 /* TimerGameIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerGameIntro.swift; sourceTree = "<group>"; };
 		B765AAB627BD4176000F249C /* WordStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStorage.swift; sourceTree = "<group>"; };
+		B76C07DE28095FCA003866DF /* Minigame2Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minigame2Intro.swift; sourceTree = "<group>"; };
 		B774CEFB277BECC900A9B368 /* MiniGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame.swift; sourceTree = "<group>"; };
 		B774CF00277BEDD500A9B368 /* MiniGameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameVM.swift; sourceTree = "<group>"; };
 		B777307927851BA000123DAD /* CardFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlip.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				2ABE296B27BE06AC00EDA3E3 /* MiniGame2BVM.swift */,
 				2ABE296D27C3E3F600EDA3E3 /* test.swift */,
 				2ABE296F27C3E48D00EDA3E3 /* Vocabulary.swift */,
+				B76C07DE28095FCA003866DF /* Minigame2Intro.swift */,
 			);
 			path = MiniGame2;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 				B777307A27851BA000123DAD /* CardFlip.swift in Sources */,
 				2A3017E4277AA5FC00369590 /* MorizeApp.swift in Sources */,
 				B712F9CA277D6DE000E7A3BD /* LottieView.swift in Sources */,
+				B76C07DF28095FCA003866DF /* Minigame2Intro.swift in Sources */,
 				F7AB7CF3278BF92A0039989F /* Toeic.swift in Sources */,
 				B7498E3827BBDF8000C46344 /* ListVM.swift in Sources */,
 				F7DAC401280895F900F81806 /* FAQView2.swift in Sources */,
