@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2B091D2801D81500F18C5E /* DeveloperInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B091C2801D81500F18C5E /* DeveloperInfoView.swift */; };
+		2A2B091E2801D81500F18C5E /* DeveloperInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B091C2801D81500F18C5E /* DeveloperInfoView.swift */; };
 		2A3017D5277AA5FC00369590 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3017D4277AA5FC00369590 /* Tests_iOS.swift */; };
 		2A3017D7277AA5FC00369590 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3017D6277AA5FC00369590 /* Tests_iOSLaunchTests.swift */; };
 		2A3017E1277AA5FC00369590 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3017E0277AA5FC00369590 /* Tests_macOS.swift */; };
@@ -185,6 +187,7 @@
 
 /* Begin PBXFileReference section */
 		25D9DB5502EB0EB628DE1CF9 /* Pods-Morize (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Morize (macOS).release.xcconfig"; path = "Target Support Files/Pods-Morize (macOS)/Pods-Morize (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		2A2B091C2801D81500F18C5E /* DeveloperInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoView.swift; sourceTree = "<group>"; };
 		2A3017BC277AA5FA00369590 /* MorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorizeApp.swift; sourceTree = "<group>"; };
 		2A3017BD277AA5FA00369590 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A3017BE277AA5FC00369590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -449,6 +452,7 @@
 				2A3AF3A9279E39270020DC74 /* CSVDataView.swift */,
 				2A3AF3AC279E39AF0020DC74 /* FAQView.swift */,
 				2A3AF3AF279E39EB0020DC74 /* SendEmail.swift */,
+				2A2B091C2801D81500F18C5E /* DeveloperInfoView.swift */,
 				F7DAC400280895F900F81806 /* FAQView2.swift */,
 			);
 			path = SettingView;
@@ -1000,6 +1004,7 @@
 				B70968302782CDB0001B0884 /* Question.swift in Sources */,
 				F79D02EB279003EF008A43D6 /* Timmer.swift in Sources */,
 				F7F7E131278415BB008FF432 /* WordList.swift in Sources */,
+				2A2B091D2801D81500F18C5E /* DeveloperInfoView.swift in Sources */,
 				2A3AF3AA279E39270020DC74 /* CSVDataView.swift in Sources */,
 				B744F15127BA945F00A2D1F8 /* FirebaseTest.swift in Sources */,
 				F7A63AD9279E416E00557E45 /* ListModel.swift in Sources */,
@@ -1077,6 +1082,7 @@
 				2A903A6727969B5800DB774A /* GoogleDelegate.swift in Sources */,
 				2A903A6927969B8E00DB774A /* minigame2.swift in Sources */,
 				F79D02EC279003EF008A43D6 /* Timmer.swift in Sources */,
+				2A2B091E2801D81500F18C5E /* DeveloperInfoView.swift in Sources */,
 				B709683F2782CDB0001B0884 /* WelcomeView.swift in Sources */,
 				2A903A6127969B2400DB774A /* TabViewSetting.swift in Sources */,
 				B70968392782CDB0001B0884 /* BottomText.swift in Sources */,
@@ -1262,7 +1268,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X843D4L2C2;
+				DEVELOPMENT_TEAM = JVBAL8CV7V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Morize--iOS--Info.plist";
@@ -1297,7 +1303,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X843D4L2C2;
+				DEVELOPMENT_TEAM = JVBAL8CV7V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Morize--iOS--Info.plist";

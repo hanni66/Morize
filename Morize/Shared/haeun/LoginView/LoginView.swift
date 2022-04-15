@@ -19,6 +19,9 @@ struct LoginView: View {
     @EnvironmentObject var googledel: GoogleDelegate
     @EnvironmentObject var kakaodel: AppDelegate   // kakao AppDelegate 함수 공유
     
+    static var kakaoLogin : Int = 0
+    static var googleLogin : Int = 0
+    
     @AppStorage("UserName") var UserName : String = UserDefaults.standard.string(forKey: "UserName") ?? ""
     @AppStorage("isLogin") var isLogin : Bool = UserDefaults.standard.bool(forKey: "isLogin")
     var body: some View {
@@ -42,7 +45,7 @@ struct LoginView: View {
                     Text("The one and only vocabulary With ")
                         .font(.custom("NotoSansKR-Bold", size: 18))
                         .foregroundColor(Color.init(hex: "777777")) +
-                    Text("Morise")
+                    Text("Morize")
                         .font(.custom("NotoSansKR-Bold", size: 18))
                         .foregroundColor(Color.init(hex: "008E00"))
                     }
@@ -74,6 +77,8 @@ struct LoginView: View {
                         // kakao login
                         Button(action : {
                             kakaodel.kakaocheck()
+                            LoginView.kakaoLogin += 1
+                            
                         }){
                             VStack {
                                 ZStack(alignment: .center) {
@@ -90,6 +95,7 @@ struct LoginView: View {
                         Button(action: {
                             googledel.signIn()
                             WordStorage.shared.setBasedWords()
+                            LoginView.googleLogin += 1
                         }) {
                             VStack {
                                 ZStack(alignment: .center) {
