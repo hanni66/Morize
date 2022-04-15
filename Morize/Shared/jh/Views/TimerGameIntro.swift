@@ -48,7 +48,7 @@ struct TimerGameIntro: View {
                     print("asdf")
                     start = true
                 }
-                .fullScreenCover(isPresented: $start, content: WelcomeView.init)
+                .fullScreenCover(isPresented: $start, content: TimerGame.init)
                 .font(.custom("NotoSansKR-Bold", size: 20))
                 .padding()
                 .frame(width: UIScreen.main.bounds.width / 2 - 32, height: 50)

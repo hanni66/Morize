@@ -21,7 +21,6 @@ struct TimerGame: View {
     @State var isTimer: Bool = true
     var body: some View {
         ZStack {
-            GameColor.main.ignoresSafeArea()
             if gameover {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
@@ -77,28 +76,7 @@ struct TimerGame: View {
                             gameover = true
                         }
                     }
-                    // 시간 초과되면 showAlert가 true로 바뀌면서 팝업창 뜨게 함
-//                     if counter == countTo {
-//                         showAlert = true
-//                     }
-                }//.padding()
-//                     .alert(isPresented: $showAlert) {
-//                         //            let firstButton = Alert.Button.default(Text("확인")) {
-//                         //                print("primary button pressed")
-//                         //            }
-//                         //            let secondButton = Alert.Button.cancel(Text("다른 게임")) {
-//                         //                print("secondary button pressed")
-//                         //            }
-//                         //            return Alert(title: Text("시간초과"), message: Text("다시 도전해보세요!"),
-//                         //                         primaryButton: firstButton, secondaryButton: secondButton)
-//                         Alert(title: Text("시간초과"), message: Text("다시 도전하세요."), dismissButton: .cancel(Text("확인")))
-//                     }
-                
-//                 // 팝업창이 뜨고 Welcomeview로 이동인데 풀스크린으로 하려다가 실패 ...
-//                 // 이것도 이상하게 뜸 ..
-//                 if showAlert == true {
-//                     WelcomeView()
-//                 }
+                }
                 Spacer()
                 Text(viewModel.questionText)
                     .font(.largeTitle)
@@ -131,13 +109,7 @@ struct TimerGame: View {
                        label: {
                         BottomText(str: "Next")
                     })
-                } // 시간이 지나면 버튼 나옴
-//                 else if completed() {
-//                    Button(action: viewModel.advanceGameState,
-//                           label: {
-//                            BottomText(str: "시간 초과")
-//                    })
-//                }
+                }
             }.padding(.bottom)
         }
         .foregroundColor(.black)
