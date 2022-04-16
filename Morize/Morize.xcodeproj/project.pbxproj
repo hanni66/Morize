@@ -142,10 +142,6 @@
 		F7A63AD7279E413600557E45 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A63AD5279E413600557E45 /* ListViewModel.swift */; };
 		F7A63AD9279E416E00557E45 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A63AD8279E416E00557E45 /* ListModel.swift */; };
 		F7A63ADA279E416E00557E45 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A63AD8279E416E00557E45 /* ListModel.swift */; };
-		F7A9EC8827D99121004E8B93 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F7A9EC8727D99121004E8B93 /* Lottie */; };
-		F7A9EC8A27D99177004E8B93 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F7A9EC8927D99177004E8B93 /* FirebaseAnalytics */; };
-		F7A9EC8C27D99182004E8B93 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F7A9EC8B27D99182004E8B93 /* FirebaseDatabase */; };
-		F7A9EC8E27D9918D004E8B93 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F7A9EC8D27D9918D004E8B93 /* FirebaseFirestore */; };
 		F7AB7CE8278BB42E0039989F /* Middle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CE6278BB42D0039989F /* Middle.swift */; };
 		F7AB7CF1278BF91E0039989F /* High.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CEF278BF91E0039989F /* High.swift */; };
 		F7AB7CF3278BF92A0039989F /* Toeic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CF2278BF92A0039989F /* Toeic.swift */; };
@@ -296,10 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7812AEF9A4236C0933D20A63 /* Pods_Morize__iOS_.framework in Frameworks */,
-				F7A9EC8827D99121004E8B93 /* Lottie in Frameworks */,
-				F7A9EC8C27D99182004E8B93 /* FirebaseDatabase in Frameworks */,
-				F7A9EC8E27D9918D004E8B93 /* FirebaseFirestore in Frameworks */,
-				F7A9EC8A27D99177004E8B93 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,10 +679,6 @@
 			);
 			name = "Morize (iOS)";
 			packageProductDependencies = (
-				F7A9EC8727D99121004E8B93 /* Lottie */,
-				F7A9EC8927D99177004E8B93 /* FirebaseAnalytics */,
-				F7A9EC8B27D99182004E8B93 /* FirebaseDatabase */,
-				F7A9EC8D27D9918D004E8B93 /* FirebaseFirestore */,
 			);
 			productName = "Morize (iOS)";
 			productReference = 2A3017C3277AA5FC00369590 /* Morize.app */;
@@ -1583,29 +1571,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F7A9EC8727D99121004E8B93 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B712F9C5277D6D8700E7A3BD /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-		F7A9EC8927D99177004E8B93 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F7C893FE27D8E6AB00222DBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		F7A9EC8B27D99182004E8B93 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F7C893FE27D8E6AB00222DBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		F7A9EC8D27D9918D004E8B93 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F7C893FE27D8E6AB00222DBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A3017B7277AA5F900369590 /* Project object */;
 }
