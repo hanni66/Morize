@@ -42,16 +42,13 @@
 		2A903A5F27969B1000DB774A /* High.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CEF278BF91E0039989F /* High.swift */; };
 		2A903A6027969B1B00DB774A /* ToeicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AE674F27867F3B007D62FF /* ToeicWord.swift */; };
 		2A903A6127969B2400DB774A /* TabViewSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59FF278534510005865D /* TabViewSetting.swift */; };
-		2A903A6227969B2700DB774A /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59F5278530150005865D /* WordView.swift */; };
 		2A903A6327969B2800DB774A /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59F5278530150005865D /* WordView.swift */; };
-		2A903A6427969B4100DB774A /* Middle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CE6278BB42D0039989F /* Middle.swift */; };
 		2A903A6527969B4F00DB774A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD3595C278E8AAB00A13F5B /* UserInfo.swift */; };
 		2A903A6627969B5300DB774A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59ED278526BD0005865D /* LoginView.swift */; };
 		2A903A6727969B5800DB774A /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD35960278E9DEA00A13F5B /* GoogleDelegate.swift */; };
 		2A903A6827969B5D00DB774A /* AppleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA85B92790058C00BE96D9 /* AppleDelegate.swift */; };
 		2A903A6927969B8E00DB774A /* minigame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D7607D277D985600D50AFA /* minigame2.swift */; };
 		2A903A6C27969B9500DB774A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8C869279113BF0096B483 /* SettingView.swift */; };
-		2A903A6D27969B9900DB774A /* MiniGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59FB278530510005865D /* MiniGameView.swift */; };
 		2A903A6E27969B9900DB774A /* MiniGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59FB278530510005865D /* MiniGameView.swift */; };
 		2A903A6F27969B9C00DB774A /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59F9278530410005865D /* WordListView.swift */; };
 		2A903A7027969BA200DB774A /* WordSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8C8672791126C0096B483 /* WordSelectView.swift */; };
@@ -103,6 +100,7 @@
 		B74EEF6E280478B40087DCB9 /* TimerGameIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EEF6D280478B40087DCB9 /* TimerGameIntro.swift */; };
 		B74EEF6F280478B40087DCB9 /* TimerGameIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EEF6D280478B40087DCB9 /* TimerGameIntro.swift */; };
 		B765AAB727BD4176000F249C /* WordStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765AAB627BD4176000F249C /* WordStorage.swift */; };
+		B76C07DF28095FCA003866DF /* Minigame2Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76C07DE28095FCA003866DF /* Minigame2Intro.swift */; };
 		B774CEFC277BECC900A9B368 /* MiniGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774CEFB277BECC900A9B368 /* MiniGame.swift */; };
 		B774CF01277BEDD500A9B368 /* MiniGameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774CF00277BEDD500A9B368 /* MiniGameVM.swift */; };
 		B777307A27851BA000123DAD /* CardFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B777307927851BA000123DAD /* CardFlip.swift */; };
@@ -115,6 +113,10 @@
 		B7DB0B9C279E4AAC002A8C2C /* GodoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7DB0B9A279E4AAC002A8C2C /* GodoM.ttf */; };
 		B7DB0BA0279E82D6002A8C2C /* plant.json in Resources */ = {isa = PBXBuildFile; fileRef = B7DB0B9F279E82D5002A8C2C /* plant.json */; };
 		B7DB0BA2279E85A2002A8C2C /* fox.json in Resources */ = {isa = PBXBuildFile; fileRef = B7DB0BA1279E85A2002A8C2C /* fox.json */; };
+		B7DDCA8928091DC500FE1BBA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B7DDCA8828091DC500FE1BBA /* Lottie */; };
+		B7DDCA8B28091DED00FE1BBA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B7DDCA8A28091DED00FE1BBA /* FirebaseAnalytics */; };
+		B7DDCA8D28091DED00FE1BBA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B7DDCA8C28091DED00FE1BBA /* FirebaseDatabase */; };
+		B7DDCA8F28091E8000FE1BBA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B7DDCA8E28091E8000FE1BBA /* FirebaseFirestore */; };
 		B7E42D7727CD32DC00CD7BBD /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7E42D7127CD32DA00CD7BBD /* NotoSansKR-Light.otf */; };
 		B7E42D7827CD32DC00CD7BBD /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7E42D7127CD32DA00CD7BBD /* NotoSansKR-Light.otf */; };
 		B7E42D7927CD32DC00CD7BBD /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7E42D7227CD32DB00CD7BBD /* NotoSansKR-Regular.otf */; };
@@ -129,23 +131,16 @@
 		B7E42D8227CD32DC00CD7BBD /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7E42D7627CD32DC00CD7BBD /* NotoSansKR-Medium.otf */; };
 		B7F323E927B0FAD300E22A2F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F323E827B0FAD300E22A2F /* File.swift */; };
 		F70721CD27967F7200C6E549 /* MorizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70721CC27967F7200C6E549 /* MorizeTests.swift */; };
-		F787461527969B330010A47C /* ToeicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AE674F27867F3B007D62FF /* ToeicWord.swift */; };
 		F787461627969B4F0010A47C /* Middle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CE6278BB42D0039989F /* Middle.swift */; };
-		F787461727969B520010A47C /* High.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CEF278BF91E0039989F /* High.swift */; };
 		F787461827969BA40010A47C /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59F5278530150005865D /* WordView.swift */; };
 		F787461927969BA80010A47C /* MiniGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C59FB278530510005865D /* MiniGameView.swift */; };
 		F787461A27969BAA0010A47C /* (null) in Sources */ = {isa = PBXBuildFile; };
-		F787461B27969BB00010A47C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A37922786727B0068DD0B /* AppDelegate.swift */; };
 		F79D02EB279003EF008A43D6 /* Timmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79D02EA279003EF008A43D6 /* Timmer.swift */; };
 		F79D02EC279003EF008A43D6 /* Timmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79D02EA279003EF008A43D6 /* Timmer.swift */; };
 		F7A63AD6279E413600557E45 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A63AD5279E413600557E45 /* ListViewModel.swift */; };
 		F7A63AD7279E413600557E45 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A63AD5279E413600557E45 /* ListViewModel.swift */; };
 		F7A63AD9279E416E00557E45 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A63AD8279E416E00557E45 /* ListModel.swift */; };
 		F7A63ADA279E416E00557E45 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A63AD8279E416E00557E45 /* ListModel.swift */; };
-		F7A9EC8827D99121004E8B93 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F7A9EC8727D99121004E8B93 /* Lottie */; };
-		F7A9EC8A27D99177004E8B93 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F7A9EC8927D99177004E8B93 /* FirebaseAnalytics */; };
-		F7A9EC8C27D99182004E8B93 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F7A9EC8B27D99182004E8B93 /* FirebaseDatabase */; };
-		F7A9EC8E27D9918D004E8B93 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F7A9EC8D27D9918D004E8B93 /* FirebaseFirestore */; };
 		F7AB7CE8278BB42E0039989F /* Middle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CE6278BB42D0039989F /* Middle.swift */; };
 		F7AB7CF1278BF91E0039989F /* High.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CEF278BF91E0039989F /* High.swift */; };
 		F7AB7CF3278BF92A0039989F /* Toeic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AB7CF2278BF92A0039989F /* Toeic.swift */; };
@@ -256,6 +251,7 @@
 		B74B45BD278D96E2001140D9 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		B74EEF6D280478B40087DCB9 /* TimerGameIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerGameIntro.swift; sourceTree = "<group>"; };
 		B765AAB627BD4176000F249C /* WordStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStorage.swift; sourceTree = "<group>"; };
+		B76C07DE28095FCA003866DF /* Minigame2Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minigame2Intro.swift; sourceTree = "<group>"; };
 		B774CEFB277BECC900A9B368 /* MiniGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame.swift; sourceTree = "<group>"; };
 		B774CF00277BEDD500A9B368 /* MiniGameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameVM.swift; sourceTree = "<group>"; };
 		B777307927851BA000123DAD /* CardFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlip.swift; sourceTree = "<group>"; };
@@ -296,10 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7812AEF9A4236C0933D20A63 /* Pods_Morize__iOS_.framework in Frameworks */,
-				F7A9EC8827D99121004E8B93 /* Lottie in Frameworks */,
-				F7A9EC8C27D99182004E8B93 /* FirebaseDatabase in Frameworks */,
-				F7A9EC8E27D9918D004E8B93 /* FirebaseFirestore in Frameworks */,
-				F7A9EC8A27D99177004E8B93 /* FirebaseAnalytics in Frameworks */,
+				B7DDCA8928091DC500FE1BBA /* Lottie in Frameworks */,
+				B7DDCA8D28091DED00FE1BBA /* FirebaseDatabase in Frameworks */,
+				B7DDCA8F28091E8000FE1BBA /* FirebaseFirestore in Frameworks */,
+				B7DDCA8B28091DED00FE1BBA /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +434,7 @@
 				2ABE296B27BE06AC00EDA3E3 /* MiniGame2BVM.swift */,
 				2ABE296D27C3E3F600EDA3E3 /* test.swift */,
 				2ABE296F27C3E48D00EDA3E3 /* Vocabulary.swift */,
+				B76C07DE28095FCA003866DF /* Minigame2Intro.swift */,
 			);
 			path = MiniGame2;
 			sourceTree = "<group>";
@@ -687,10 +684,10 @@
 			);
 			name = "Morize (iOS)";
 			packageProductDependencies = (
-				F7A9EC8727D99121004E8B93 /* Lottie */,
-				F7A9EC8927D99177004E8B93 /* FirebaseAnalytics */,
-				F7A9EC8B27D99182004E8B93 /* FirebaseDatabase */,
-				F7A9EC8D27D9918D004E8B93 /* FirebaseFirestore */,
+				B7DDCA8828091DC500FE1BBA /* Lottie */,
+				B7DDCA8A28091DED00FE1BBA /* FirebaseAnalytics */,
+				B7DDCA8C28091DED00FE1BBA /* FirebaseDatabase */,
+				B7DDCA8E28091E8000FE1BBA /* FirebaseFirestore */,
 			);
 			productName = "Morize (iOS)";
 			productReference = 2A3017C3277AA5FC00369590 /* Morize.app */;
@@ -777,7 +774,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					2A3017C2277AA5FC00369590 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -811,6 +808,8 @@
 			packageReferences = (
 				B712F9C5277D6D8700E7A3BD /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				F7C893FE27D8E6AB00222DBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B747D6B92809193700ABBDC2 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B747D6BC280919F400ABBDC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 2A3017C4277AA5FC00369590 /* Products */;
 			projectDirPath = "";
@@ -998,9 +997,7 @@
 				B765AAB727BD4176000F249C /* WordStorage.swift in Sources */,
 				2A903A5F27969B1000DB774A /* High.swift in Sources */,
 				B7D7607E277D985600D50AFA /* minigame2.swift in Sources */,
-				F787461727969B520010A47C /* High.swift in Sources */,
 				F787461927969BA80010A47C /* MiniGameView.swift in Sources */,
-				2A903A6227969B2700DB774A /* WordView.swift in Sources */,
 				B70968302782CDB0001B0884 /* Question.swift in Sources */,
 				F79D02EB279003EF008A43D6 /* Timmer.swift in Sources */,
 				F7F7E131278415BB008FF432 /* WordList.swift in Sources */,
@@ -1008,12 +1005,10 @@
 				2A3AF3AA279E39270020DC74 /* CSVDataView.swift in Sources */,
 				B744F15127BA945F00A2D1F8 /* FirebaseTest.swift in Sources */,
 				F7A63AD9279E416E00557E45 /* ListModel.swift in Sources */,
-				F787461B27969BB00010A47C /* AppDelegate.swift in Sources */,
 				B709683C2782CDB0001B0884 /* ResultsView.swift in Sources */,
 				B7BB219527DB8EE7006358EC /* MiniGameIntro.swift in Sources */,
 				2A7DB83727AAB9BA004D4C0D /* ComposeMailData.swift in Sources */,
 				B713F46A278BC36C0040E6A4 /* CardFlipTutorial.swift in Sources */,
-				F787461527969B330010A47C /* ToeicWord.swift in Sources */,
 				2A3AF3A4279E38EB0020DC74 /* NoticeView.swift in Sources */,
 				B7498E3427BBDA3300C46344 /* ListView.swift in Sources */,
 				2A3017E6277AA5FC00369590 /* ContentView.swift in Sources */,
@@ -1029,17 +1024,16 @@
 				B777307A27851BA000123DAD /* CardFlip.swift in Sources */,
 				2A3017E4277AA5FC00369590 /* MorizeApp.swift in Sources */,
 				B712F9CA277D6DE000E7A3BD /* LottieView.swift in Sources */,
+				B76C07DF28095FCA003866DF /* Minigame2Intro.swift in Sources */,
 				F7AB7CF3278BF92A0039989F /* Toeic.swift in Sources */,
 				B7498E3827BBDF8000C46344 /* ListVM.swift in Sources */,
 				F7DAC401280895F900F81806 /* FAQView2.swift in Sources */,
-				2A903A6427969B4100DB774A /* Middle.swift in Sources */,
 				F7AE674A27867D5F007D62FF /* MiddleWord.swift in Sources */,
 				B709682C2782CDB0001B0884 /* Game.swift in Sources */,
 				2A3AF3AD279E39AF0020DC74 /* FAQView.swift in Sources */,
 				F7AE674D27867F0E007D62FF /* HighWord.swift in Sources */,
 				2AD2D86E27B0243800858CAE /* NotificationManager.swift in Sources */,
 				B70968422782CDB0001B0884 /* ResultsViewModel.swift in Sources */,
-				2A903A6D27969B9900DB774A /* MiniGameView.swift in Sources */,
 				2A3C59EE278526BD0005865D /* LoginView.swift in Sources */,
 				B713F472278BD7050040E6A4 /* CardMemory.swift in Sources */,
 				B7B3D66A27BBE8D900B4A741 /* ListAddView.swift in Sources */,
@@ -1337,6 +1331,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1366,6 +1361,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1574,6 +1570,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		B747D6B92809193700ABBDC2 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B747D6BC280919F400ABBDC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		F7C893FE27D8E6AB00222DBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1585,22 +1597,22 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F7A9EC8727D99121004E8B93 /* Lottie */ = {
+		B7DDCA8828091DC500FE1BBA /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B712F9C5277D6D8700E7A3BD /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
-		F7A9EC8927D99177004E8B93 /* FirebaseAnalytics */ = {
+		B7DDCA8A28091DED00FE1BBA /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F7C893FE27D8E6AB00222DBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		F7A9EC8B27D99182004E8B93 /* FirebaseDatabase */ = {
+		B7DDCA8C28091DED00FE1BBA /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F7C893FE27D8E6AB00222DBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		F7A9EC8D27D9918D004E8B93 /* FirebaseFirestore */ = {
+		B7DDCA8E28091E8000FE1BBA /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F7C893FE27D8E6AB00222DBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;

@@ -1,26 +1,25 @@
 //
-//  TimerGameIntro.swift
-//  Morize
+//  Minigame2Intro.swift
+//  Morize (iOS)
 //
-//  Created by judongseok on 2022/04/11.
+//  Created by judongseok on 2022/04/15.
 //
-
 import Foundation
 import SwiftUI
 
-struct TimerGameIntro: View {
+struct Minigame2Intro: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var start = false
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
-            Text("타이머 게임")
+            Text("단어 맞추기")
                 .foregroundColor(Color.init(hex: "008E00"))
                 .font(.custom("NotoSansKR-Bold", size: 40))
                 .padding(.bottom, 30)
                 .padding(.leading, 16)
             
-            Text("5초안에 단어와 맞는 뜻을 선택하는 게임입니다.")
+            Text("뜻을 보고 15초 안에 스펠링을 순서대로 맞추는 게임입니다.")
                 .font(.custom("NotoSansKR-Regular", size: 16))
                 .padding(.bottom, 1)
                 .padding(.leading, 16)
@@ -48,7 +47,7 @@ struct TimerGameIntro: View {
                     print("asdf")
                     start = true
                 }
-                .fullScreenCover(isPresented: $start, content: TimerGame.init)
+                .fullScreenCover(isPresented: $start, content: MiniGame2B.init)
                 .font(.custom("NotoSansKR-Bold", size: 20))
                 .padding()
                 .frame(width: UIScreen.main.bounds.width / 2 - 32, height: 50)
@@ -60,11 +59,5 @@ struct TimerGameIntro: View {
             }
         }
         .navigationBarHidden(true)
-    }
-}
-
-struct TimerGameIntro_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerGameIntro()
     }
 }

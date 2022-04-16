@@ -23,6 +23,12 @@ struct TabViewSetting: View {
             WordView()
             // 하단 TabView
             TabView {
+                ListView()
+                    .tabItem{
+                        Image(systemName: "book")
+                   }
+                   .navigationBarHidden(false)
+                
                 CardFlip(card: $words)
                     .tabItem{
                         Image(systemName: "note.text")
@@ -36,12 +42,6 @@ struct TabViewSetting: View {
                         dragOffset = WordStorage.shared.dragOffset
                         print(words)
                     }
-                
-                ListView()
-                    .tabItem{
-                        Image(systemName: "book")
-                   }
-                   .navigationBarHidden(false)
                 
                 MiniGameView()
                     .tabItem{

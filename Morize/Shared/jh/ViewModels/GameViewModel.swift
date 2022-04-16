@@ -55,6 +55,11 @@ class GameViewModel: ObservableObject {
         game.makeSelection(at: index)
     }
     
+    func reset() {
+        game = Game()
+    }
+    
+    
     // 정답여부
     func colorForButton(at buttonIndex: Int) -> Color {
         guard let selectedIndex = game.selections[game.currentQuestion], selectedIndex == buttonIndex else { return .clear }
