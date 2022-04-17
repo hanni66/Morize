@@ -13,7 +13,7 @@ struct MiniGameIntro: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
-            Text("단어 맞추기")
+            Text("카드 맞추기")
                 .foregroundColor(Color.init(hex: "008E00"))
                 .font(.custom("NotoSansKR-Bold", size: 40))
                 .padding(.bottom, 30)

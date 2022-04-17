@@ -39,8 +39,9 @@ struct DeveloperInfoView: View {
                 VStack{
                     DeveloperBottom(ImageName: "haeun", bottomName: "Haeun", gitlink: "https://github.com/hanni66")
                     DeveloperBottom(ImageName: "jinhee", bottomName: "Jinhee", gitlink: "https://github.com/parkjinhee53")
-                    DeveloperBottom(ImageName: "porfile", bottomName: "Dongsuk", gitlink: "https://github.com/MojitoBar")
+                    DeveloperBottom(ImageName: "profile", bottomName: "Dongseok", gitlink: "https://github.com/MojitoBar")
                 }
+                .padding(.leading, 20)
 
                 LabelledDivider(label: "지원", image: "megaphone")
                 

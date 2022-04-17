@@ -38,7 +38,7 @@ struct MiniGameView: View {
                 print("asdf")
                 wordStart = true
             }
-            .fullScreenCover(isPresented: $wordStart, content: MiniGame2B.init)
+            .fullScreenCover(isPresented: $wordStart, content: Minigame2Intro.init)
             .font(.custom("NotoSansKR-Bold", size: 20))
             .padding()
             .frame(width: UIScreen.main.bounds.width / 2 - 32, height: 50)

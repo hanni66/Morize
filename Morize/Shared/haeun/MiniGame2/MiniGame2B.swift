@@ -15,6 +15,8 @@ class alphabet:ObservableObject{
 }
 
 struct MiniGame2B: View {
+    
+    @Environment(\.presentationMode) var presentationmode
     // MARK: - 변수
     @State private var vocaVM = MiniGame2BVM() // ViewModel MiniGame2BVM()를 사용하는 변수
     // timer
@@ -32,7 +34,7 @@ struct MiniGame2B: View {
     @State         var showScorePage:Bool = false   // 게임 마지막 결과 화면
     @State private var showAns:Bool = false         // 답을 가리기 위한 조건 (삼항 조건 연산자에서 쓰임 question ? answer1 : answer2 구조)
     // 단어 제공
-    @State private var vocabularyOrder = [Int]()
+    @State private var vocabularyOrder = [0]
     // 한글 뜻을 나타낼 변수
     @State var kWord: String = ""
     // 게임을 진행할 단어의 위치 사용, 저장하는 변수
@@ -53,164 +55,162 @@ struct MiniGame2B: View {
     @State private var vocaSpeak = [Bool]()
     let synthesizer = AVSpeechSynthesizer()
     
+    init() {
+        initialization()
+    }
 
     var body: some View {
         ZStack{
-            VStack{
-                ZStack{
-                    // 라운드가 바뀌고있으면
-                    if(roundChanging){
-                        Text("Round \(roundCount+0)")
-                            .font(.system(size:50,design: .monospaced))
-                    }
-                    else{
-                        VStack{
-                            // count
-                            Text("\(countingRound)/\(maxCount)")
-                                .frame(alignment: .leading)
-                            // 타이머 바
-                            TimerBar(value: self.timeRemaining,
-                                     maxValue: self.maxValue,
-                                     foregroundColor: .green)
-                                .frame(height: 15)
-                            Spacer()
-                            ZStack{
-                                // 뜻과 예문 나타내는 설명창
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.green)
-                                    .frame(width: 300, height: 220)
-                                Text("\(kWord)")
-                                    .font(.headline)
-                                    .padding(30)
-                                    .foregroundColor(.white)
-                            }
-                            Spacer()
-                            // 글자를 선택하는 부분 -> 분석필요
-                            HStack(alignment: .center,spacing:15){
-                                Group{
-                                    ForEach(ansChars.indices,id:\.self){
-                                        (index) in
-                                        
-                                        Text("\(ansChars[index])")
-                                            .font(.system(size:15,design: .monospaced))
-                                            .foregroundColor(.blue)
-                                            .frame(width: ansTextSize, height: ansTextSize)
-                                            .background(.white)
-                                            .cornerRadius(50)
-                                            .overlay(RoundedRectangle(cornerRadius: 50)
-                                                        .stroke(Color.yellow,lineWidth: 2))
-                                            .overlay(GeometryReader(content:{geometry in
-                                                let _ = updatePos(geometry:geometry,ptr:&ans.pos[index])
-                                                Color.clear
-                                            }))
-                                            .onTapGesture {
-                                                print("offset[\(index)]:\(offset[index])")
-                                                print("newPosition[\(index)]:\(newPosition[index])")
-                                                print("ansPos[\(index)]:\(ans.pos[index])")
-                                                print("(\(ans.pos[index].origin.x-newPosition[index].width),\(ans.pos[index].origin.y-newPosition[index].height))")
-//                                                fgColor = color.randomElement()!
-                                            }
-                                            .offset(offset[index])
-                                            .gesture(DragGesture()
-                                                        .onChanged({value in
-                                                if(ans.correct[index]){ return }
-                                                if(!vocaSpeak[index]){
-                                                    vocaSpeak[index] = true
-//                                                        strSpeacker(str:ansChars[index])
+            if scorePageSelect() {
+                ScorePage
+            }
+            else {
+                VStack{
+                    ZStack{
+                        // 라운드가 바뀌고있으면
+                        if(roundChanging){
+                            Text("Round \(roundCount+0)")
+                                .font(.system(size:50,design: .monospaced))
+                        }
+                        else{
+                            VStack{
+                                // count
+                                Text("\(countingRound)/\(maxCount)")
+                                    .frame(alignment: .leading)
+                                // 타이머 바
+                                TimerBar(value: self.timeRemaining,
+                                         maxValue: self.maxValue,
+                                         foregroundColor: .green)
+                                    .frame(height: 15)
+                                Spacer()
+                                ZStack{
+                                    // 뜻과 예문 나타내는 설명창
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color.init(hex: "008E00"))
+                                        .frame(width: 300, height: 220)
+                                    Text("\(kWord)")
+                                        .padding(30)
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 35, weight: .bold, design: .default))
+                                }
+                                Spacer()
+                                // 글자를 선택하는 부분 -> 분석필요
+                                HStack(alignment: .center,spacing:15){
+                                    Group{
+                                        ForEach(ansChars.indices,id:\.self){
+                                            (index) in
+                                            
+                                            Text("\(ansChars[index])")
+                                                .font(.system(size:20, design: .default))
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.black)
+                                                .frame(width: ansTextSize, height: ansTextSize)
+                                                .background(.white)
+                                                .cornerRadius(50)
+                                                .overlay(RoundedRectangle(cornerRadius: 50)
+                                                            .stroke(Color.yellow,lineWidth: 2))
+                                                .overlay(GeometryReader(content:{geometry in
+                                                    let _ = updatePos(geometry:geometry,ptr:&ans.pos[index])
+                                                    Color.clear
+                                                }))
+                                                .onTapGesture {
+                                                    print("offset[\(index)]:\(offset[index])")
+                                                    print("newPosition[\(index)]:\(newPosition[index])")
+                                                    print("ansPos[\(index)]:\(ans.pos[index])")
+                                                    print("(\(ans.pos[index].origin.x-newPosition[index].width),\(ans.pos[index].origin.y-newPosition[index].height))")
+    //                                                fgColor = color.randomElement()!
                                                 }
-                                                offset[index].width = value.translation.width + newPosition[index].width
-                                                offset[index].height = value.translation.height + newPosition[index].height
-                                            })
-                                            .onEnded({ value in
-                                                if(ans.correct[index]){ return }
-                                                vocaSpeak[index] = false
-                                                newPosition[index].width = offset[index].width
-                                                newPosition[index].height = offset[index].height
-                                                for i in 0...quesChars.count-1{
-                                                    if(ansChars[index] == quesChars[i] && !ques.correct[i]){
-                                                        if(cmpDistance(dic:(ansTextSize+quesTextSize)/2,A:ques.pos[i],Asize: quesTextSize,B:ans.pos[index],Bsize: ansTextSize)){
-                                                            print("cmpDistance pass")
-                                                            print("ques.pos[\(i)]:\(ques.pos[i].origin)")
-                                                            print("ans.pos[\(index)]:\(ans.pos[index].origin)")
-                                                            print("offset[\(index)]:\(offset[index])")
-                                                            print("newPosition[\(index)]:\(newPosition[index])")
-                                                            offset[index].width = ques.pos[i].origin.x - (ans.pos[index].origin.x-newPosition[index].width) + 5
-                                                            offset[index].height = ques.pos[i].origin.y - (ans.pos[index].origin.y-newPosition[index].height) + 5
-                                                            newPosition[index] = offset[index]
-                                                            
-                                                            ans.correct[index] = true
-                                                            ques.correct[i] = true
-//                                                                correctPlayer.playFromStart()
-                                                            break
+                                                .offset(offset[index])
+                                                .gesture(DragGesture()
+                                                            .onChanged({value in
+                                                    if(ans.correct[index]){ return }
+                                                    if(!vocaSpeak[index]){
+                                                        vocaSpeak[index] = true
+    //                                                        strSpeacker(str:ansChars[index])
+                                                    }
+                                                    offset[index].width = value.translation.width + newPosition[index].width
+                                                    offset[index].height = value.translation.height + newPosition[index].height
+                                                })
+                                                .onEnded({ value in
+                                                    if(ans.correct[index]){ return }
+                                                    vocaSpeak[index] = false
+                                                    newPosition[index].width = offset[index].width
+                                                    newPosition[index].height = offset[index].height
+                                                    for i in 0...quesChars.count-1{
+                                                        if(ansChars[index] == quesChars[i] && !ques.correct[i]){
+                                                            if(cmpDistance(dic:(ansTextSize+quesTextSize)/2,A:ques.pos[i],Asize: quesTextSize,B:ans.pos[index],Bsize: ansTextSize)){
+                                                                print("cmpDistance pass")
+                                                                print("ques.pos[\(i)]:\(ques.pos[i].origin)")
+                                                                print("ans.pos[\(index)]:\(ans.pos[index].origin)")
+                                                                print("offset[\(index)]:\(offset[index])")
+                                                                print("newPosition[\(index)]:\(newPosition[index])")
+                                                                offset[index].width = ques.pos[i].origin.x - (ans.pos[index].origin.x-newPosition[index].width) + 5
+                                                                offset[index].height = ques.pos[i].origin.y - (ans.pos[index].origin.y-newPosition[index].height) + 5
+                                                                newPosition[index] = offset[index]
+                                                                
+                                                                ans.correct[index] = true
+                                                                ques.correct[i] = true
+    //                                                                correctPlayer.playFromStart()
+                                                                break
+                                                            }
                                                         }
                                                     }
-                                                }
-                                                if(!ans.correct[index]){
-                                                    offset[index] = .zero
-                                                    newPosition[index] = .zero
-//                                                        errorPlayer.playFromStart()
-                                                }
-                                                var pass = true
-                                                for i in ans.correct{
-                                                    pass = pass && i
-                                                    if(!pass){ break }
-                                                }
-                                                if(pass){
-//                                                        self.timer?.invalidate()
-//                                                        strSpeacker(str:vocaVM.Korean)
-                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                                                        gamePlay()
+                                                    if(!ans.correct[index]){
+                                                        offset[index] = .zero
+                                                        newPosition[index] = .zero
                                                     }
+                                                    var pass = true
+                                                    for i in ans.correct{
+                                                        pass = pass && i
+                                                        if(!pass){ break }
+                                                    }
+                                                    if(pass){
+                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                                                            gamePlay()
+                                                        }
+                                                    }
+                                                })
+                                            )
+                                        }
+                                    }
+                                }
+    //                            Spacer()
+                                // 답을 입력하는 부분 -> 분석 필요
+                                HStack(alignment: .center,spacing:15){
+                                    Group{
+                                        ForEach(quesChars.indices,id:\.self){
+                                            (index) in
+                                            Text(showAns ? "\(quesChars[index])" : "")  //showAns가 ture면 quesChars[index]를 보여줌, false면 ""를 보여줌
+                                                .font(.system(size:15,design: .monospaced))
+                                                .foregroundColor(.blue)
+                                                .frame(width: quesTextSize, height: quesTextSize)
+                                                .background(Color.clear)
+                                                .cornerRadius(50)
+                                                .overlay(RoundedRectangle(cornerRadius: 50)
+                                                    .stroke(Color.init(hex: "008E00"),lineWidth: 2))
+                                                .overlay(GeometryReader(content:{geometry in
+                                                    let _ = updatePos(geometry:geometry,ptr:&ques.pos[index])
+                                                    Color.clear
+                                                }))
+                                                .onTapGesture {
+                                                    print("quesPos[\(index)]:\(ques.pos[index])")
                                                 }
-                                            })
-                                        )
+                                        }
                                     }
-                                }
+                                }.padding(.top,25)
                             }
-//                            Spacer()
-                            // 답을 입력하는 부분 -> 분석 필요
-                            HStack(alignment: .center,spacing:15){
-                                Group{
-                                    ForEach(quesChars.indices,id:\.self){
-                                        (index) in
-                                        Text(showAns ? "\(quesChars[index])" : "")  //showAns가 ture면 quesChars[index]를 보여줌, false면 ""를 보여줌
-                                            .font(.system(size:15,design: .monospaced))
-                                            .foregroundColor(.blue)
-                                            .frame(width: quesTextSize, height: quesTextSize)
-                                            .background(Color.clear)
-                                            .cornerRadius(50)
-                                            .overlay(RoundedRectangle(cornerRadius: 50)
-                                                        .stroke(Color.green,lineWidth: 2))
-                                            .overlay(GeometryReader(content:{geometry in
-                                                let _ = updatePos(geometry:geometry,ptr:&ques.pos[index])
-                                                Color.clear
-                                            }))
-                                            .onTapGesture {
-                                                print("quesPos[\(index)]:\(ques.pos[index])")
-                                            }
-                                    }
-                                }
-                            }.padding(.top,25)
                         }
                     }
-                }
-                .fullScreenCover(isPresented:$showScorePage,content:{
-                    if(scorePageSelect()){
-                        ScorePage
+                    .onAppear{
+                        initialization() // 게임 초기화
                     }
-                    else{
-                        GameOverView
+                    .onDisappear{
+                        //            self.timer?.invalidate()
                     }
-                })
-                .onAppear{
-                    initialization() // 게임 초기화
-                }
-                .onDisappear{
-                    //            self.timer?.invalidate()
-                }
-                .onReceive(timer) { time in
-                    if timeRemaining > 0 {
-                        timeRemaining -= 1
+                    .onReceive(timer) { time in
+                        if timeRemaining > 0 {
+                            timeRemaining -= 1
+                        }
                     }
                 }
             }
@@ -353,21 +353,23 @@ extension MiniGame2B {
     // 마지막에 결과 화면을 보여줄 View 몇 개를 맞췄는지 갯수 보이기
     var ScorePage:some View{
         ZStack{
-            //            backGround(imgName: .constant("background_00"),opacity: .constant(0.75))
             VStack{
-                //Text("Your record time :  600.0")
+                Spacer()
                 Text("Congratulations!😄💪🐥")
-                    .font(.system(size:30,design: .monospaced))
+                    .font(.system(size: 20, design: .default))
                     .foregroundColor(.black)
-                //                Text("Your record time : "+String(format:"%.1f", timeClock))
-                //                    .font(.system(size:30,design: .monospaced))
-                //                    .foregroundColor(.blue)
                 
-            }
-        }
-        .onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4.5){
-                showScorePage = false
+                Spacer()
+                Button {
+                    presentationmode.wrappedValue.dismiss()
+                } label: {
+                    Text("뒤로가기")
+                        .font(.system(size: 20, design: .default))
+                        .foregroundColor(.white)
+                }
+                .frame(width: UIScreen.main.bounds.width - 32, height: 40, alignment: .center)
+                .background(Color.init(hex: "008E00"))
+                .cornerRadius(16)
             }
         }
     }
