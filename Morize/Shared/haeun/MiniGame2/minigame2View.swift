@@ -5,9 +5,9 @@
 //  Created by 김하은 on 2022/02/02.
 //
 
-import SwiftUI
-import Combine
-import Lottie
+//import SwiftUI
+//import Combine
+//import Lottie
 
 //struct MiniGame2View: View {
 //    @ObservedObject var viewM = MiniGame2VM()
